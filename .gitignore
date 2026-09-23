@@ -1,0 +1,25 @@
+# Secrets — never commit these
+.env
+*.json.key
+credentials/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Media / generated output (lives in Google Drive, not git)
+media/
+output/
+
+# macOS
+.DS_Store
+
+# Pipeline state (which assets were already posted)
+state/
+output/
+
+# Brand and strategy — business material, kept off the public repo.
+# The pipeline reads these at runtime; see README for what they must contain.
+brand/
+docs/

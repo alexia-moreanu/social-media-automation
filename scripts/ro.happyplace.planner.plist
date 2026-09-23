@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Writes next month's plan on the 25th at 10:00.
+     Install:  cp scripts/ro.happyplace.planner.plist ~/Library/LaunchAgents/
+               launchctl load ~/Library/LaunchAgents/ro.happyplace.planner.plist -->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>ro.happyplace.planner</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/anaconda3/bin/python3</string>
+        <string>/Users/alexiamoreanu/Documents/GitHub/social-media-automation/scripts/plan_month.py</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/alexiamoreanu/Documents/GitHub/social-media-automation</string>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Day</key><integer>25</integer>
+        <key>Hour</key><integer>10</integer>
+        <key>Minute</key><integer>0</integer>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>/Users/alexiamoreanu/Documents/GitHub/social-media-automation/state/planner.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/alexiamoreanu/Documents/GitHub/social-media-automation/state/planner.log</string>
+</dict>
+</plist>

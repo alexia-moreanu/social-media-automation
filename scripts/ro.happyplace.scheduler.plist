@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Runs the Instagram scheduler every 15 minutes.
+     Install:  cp scripts/ro.happyplace.scheduler.plist ~/Library/LaunchAgents/
+               launchctl load ~/Library/LaunchAgents/ro.happyplace.scheduler.plist
+     Stop:     launchctl unload ~/Library/LaunchAgents/ro.happyplace.scheduler.plist -->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>ro.happyplace.scheduler</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/anaconda3/bin/python3</string>
+        <string>/Users/alexiamoreanu/Documents/GitHub/social-media-automation/scripts/publish_due.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/alexiamoreanu/Documents/GitHub/social-media-automation</string>
+
+    <key>StartInterval</key>
+    <integer>900</integer>
+
+    <!-- If the Mac was asleep at the scheduled time, run as soon as it wakes. -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/alexiamoreanu/Documents/GitHub/social-media-automation/state/scheduler.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/alexiamoreanu/Documents/GitHub/social-media-automation/state/scheduler.log</string>
+</dict>
+</plist>
